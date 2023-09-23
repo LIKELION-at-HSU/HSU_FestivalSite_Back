@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOTAL BOARD</title>
+    {% comment %} <link href="{% static 'board/css/index_style.css' %}" rel="stylesheet"> {% endcomment %}
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+      .boardImg {
+        width: 83.33333%;
+          height: 400px;
+          margin: 0 auto;
+          padding-top: 50px;
+          padding-left: 50px;
+          justify-content:space-around;
+          background-image: url("{% static 'board/assets/backBoard.png' %}");
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 100% 100%;
+          display: flex;
+      }
+      .iconOne {
+        background-image: url("{% static 'board/assets/1.png' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-size: 110% 100%;
+    }
+    
+    .iconTwo {
+        background-image: url("{% static 'board/assets/2.png' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-size: 100% 100%;
+    }
+    .iconThree {
+        background-image: url("{% static 'board/assets/3.png' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-size: 100% 100%;
+    }
+    .iconFour {
+        background-image: url("{% static 'board/assets/4.png' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-size: 100% 100%;
+    }
+    .iconFive {
+        background-image: url("{% static 'board/assets/5.png' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-size: 100% 100%;
+    }
+    .iconSix {
+        background-image: url("{% static 'board/assets/6.png' %}");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-size: 100% 100%;
+    }
+    .boardImg_total{
+      width: 83.33333%;
+      height: 150px;
+      margin: 0 auto;
+      padding-top: 50px;
+      padding-left: 50px;
+      justify-content:space-around;
+      background-image: url("{% static 'board/assets/backBoard.png' %}");
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+      display: flex;
+  }
+
+
+    </style>
+</head>
+<body>
+  {% comment %} <header class="text-gray-600 body-font">
+    <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+    <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+        <span class="ml-3 text-xl"><a href="{% url 'mainpage'%}">UNICOM</a></span></a>
+    <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+        {% if request.user.is_authenticated %}
+        <a class="mr-5 hover:text-gray-900" href="{% url 'logout' %}">LOGOUT</a>
+        <a class="mr-5 hover:text-gray-900" href="{% url 'myPage' %}">MYPAGE</a>
+        {%else%}
+        <a class="mr-5 hover:text-gray-900" href="{% url 'login' %}">LOGIN</a>
+        <a class="mr-5 hover:text-gray-900" href="{% url 'join' %}">JOIN</a>
+        {%endif%}
+    </nav>
+    </div>
+  </header> {% endcomment %}
+
+  
+  <!-- 게시판 -->
+  <section class="text-gray-600 body-font">
+    <div class="container px-5 py-5 mx-auto mb-10">
+      <h1 class="text-4xl font-medium title-font text-gray-900  pt-8 pb-4 text-center font-semibold">{{category}}</h1>
+      <div class="flex flex-wrap">
+        <div class="p-4 flex justify-center h-content w-full">
+          <div class="h-content w-10/12 bg-gray-100 p-4 rounded list-none list-inside text-2xl">
+            <li>
+              <ul id ="ulTable">
+                <li>
+                    <ul class="tableCate">
+                        <li>No</li>
+                        <li>제목</li>
+                        <li>작성일</li>
+                        <li>작성자</li>
+                        <li>조회수</li>
+                    </ul>
+                </li>
+  
+                <!-- 게시물이 출력될 영역 -->
+                {% for post in intruduce_list %}
+                        <li>
+                          <ul>
+                              <li class="text-center p-3">{{ post_list.pk }}</li>
+                              <li class="text-center p-3 hover:underline"><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+                              <li class="text-center p-3">{{ post.shortin }}</li>
+                              <li class="text-center p-3">{{ post.intruduce }}</li>
+                              <li class="text-center p-3">{{ post.likecount }}</li>
+                          </ul>
+                        </li>
+                {% endfor %}
+              
+              </ul>
+            </li>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </body>
+</html>

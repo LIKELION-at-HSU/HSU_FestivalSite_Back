@@ -1,0 +1,1824 @@
+@font-face {
+    font-family: 'PyeongChangPeace-Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    margin: 0;
+    height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    place-items: center;
+    text-align: center;
+}
+
+/* 모바일 버전 */
+@media all and (max-width:767px){
+    
+        .title .avatar {
+            width: 40px;
+            height: 40px;
+            background-image: url(../img/avatar.jpg);
+            display: inline-block;
+            border-radius: 50%;
+            background-size: 100%;
+        }
+    
+        .noite {
+            background: -webkit-linear-gradient(top, rgb(0, 0, 0) 50%, rgb(45, 34, 71)80%, rgb(42, 31, 62));
+            width: 100%;
+            height: 950%;
+            position: absolute;
+            /*     overflow: hidden; */
+        }
+    
+        .constelacao {
+            /* position: absolute; */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            animation: rotate 600s infinite linear;
+        }
+    
+        .estrela {
+            background-color: white;
+            border-radius: 50%;
+            position: absolute;
+            animation-name: estrela;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+    
+        .estrela.style1 {
+            animation-duration: 0.5s;
+            animation-name: estrela;
+        }
+    
+        .estrela.style2 {
+            animation-duration: 1s;
+            animation-name: estrela;
+        }
+    
+        .estrela.style3 {
+            animation-duration: 1.5s;
+            animation-name: estrela;
+        }
+    
+        .estrela.style4 {
+            animation-duration: 2s;
+            animation-name: estrelaDestacada;
+        }
+    
+        .estrela.tam1 {
+            width: 1px;
+            height: 1px;
+        }
+    
+        .estrela.tam2 {
+            width: 2px;
+            height: 2px;
+        }
+    
+        .estrela.tam3 {
+            width: 3px;
+            height: 3px;
+        }
+    
+        .estrela.opacity1 {
+            opacity: 1;
+        }
+    
+        .estrela.opacity2 {
+            opacity: .5;
+        }
+    
+        .estrela.opacity3 {
+            opacity: .1;
+        }
+    
+        .meteoro {
+            /* position: absolute; */
+            background-color: #fff;
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            transform: rotate(-35deg);
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 1s;
+        }
+    
+        .meteoro:before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 10px;
+            width: 0;
+            height: 0;
+            border-top: 1px solid transparent;
+            border-bottom: 1px solid transparent;
+            border-left: 85px solid white;
+            position: absolute;
+            left: 2px;
+            top: 0;
+        }
+    
+        .meteoro.style1 {
+            animation-name: meteoroStyle1;
+        }
+    
+        .meteoro.style2 {
+            animation-name: meteoroStyle2;
+        }
+    
+        .meteoro.style3 {
+            animation-name: meteoroStyle3;
+        }
+    
+        .meteoro.style4 {
+            animation-name: meteoroStyle4;
+        }
+    
+        .lua {
+            position: absolute;
+            right: -50px;
+            top: -50px;
+            width: 230px;
+            height: 230px;
+            border-radius: 50%;
+            box-shadow: 0 0 160px 0px #fff, 0 0 30px -4px #fff, 0 0 8px 2px rgba(255, 255, 255, 0.26);
+            background-color: #fff;
+            animation-name: lua;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+            animation-duration: 10s;
+        }
+    
+        .lua .textura {
+            background-image: url(https://raw.githubusercontent.com/interaminense/starry-sky/master/src/img/bgMoon.png);
+            background-position: center;
+            background-size: 100%;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+            overflow: hidden;
+            opacity: 0.4;
+        }
+    
+        .floresta {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+    
+        .floresta img {
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+    
+        @keyframes escurecer {
+            0% {
+                top: 0;
+            }
+    
+            100% {
+                top: 100%;
+            }
+        }
+    
+        @keyframes estrela {
+            0% {
+                box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+            }
+    
+            50% {
+                box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+            }
+    
+            100% {
+                box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+            }
+        }
+    
+        @keyframes estrelaDestacada {
+            0% {
+                background-color: #FFFFFF;
+                box-shadow: 0 0 10px 0px rgba(255, 255, 255, 1);
+            }
+    
+            20% {
+                background-color: #FFC4C4;
+                box-shadow: 0 0 10px 0px rgb(255, 196, 196, 1);
+            }
+    
+            80% {
+                background-color: #C4CFFF;
+                box-shadow: 0 0 10px 0px rgb(196, 207, 255, 1);
+            }
+    
+            100% {
+                background-color: #FFFFFF;
+                box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.2);
+            }
+        }
+    
+        @keyframes meteoroStyle1 {
+            0% {
+                opacity: 0;
+                right: 300px;
+                top: 100px;
+            }
+    
+            30% {
+                opacity: .3;
+            }
+    
+            60% {
+                opacity: .3;
+            }
+    
+            100% {
+                opacity: 0;
+                right: 1000px;
+                top: 600px;
+            }
+        }
+    
+        @keyframes meteoroStyle2 {
+            0% {
+                opacity: 0;
+                right: 700px;
+                top: 100px;
+            }
+    
+            30% {
+                opacity: 1;
+            }
+    
+            60% {
+                opacity: 1;
+            }
+    
+            100% {
+                opacity: 0;
+                right: 1400px;
+                top: 600px;
+            }
+        }
+    
+        @keyframes meteoroStyle3 {
+            0% {
+                opacity: 0;
+                right: 300px;
+                top: 300px;
+            }
+    
+            30% {
+                opacity: 1;
+            }
+    
+            60% {
+                opacity: 1;
+            }
+    
+            100% {
+                opacity: 0;
+                right: 1000px;
+                top: 800px;
+            }
+        }
+    
+        @keyframes meteoroStyle4 {
+            0% {
+                opacity: 0;
+                right: 700px;
+                top: 300px;
+            }
+    
+            30% {
+                opacity: 1;
+            }
+    
+            60% {
+                opacity: 1;
+            }
+    
+            100% {
+                opacity: 0;
+                right: 1400px;
+                top: 800px;
+            }
+        }
+    
+        @keyframes lua {
+            0% {
+                box-shadow: 0 0 160px 0px #fff, 0 0 30px -4px #fff, 0 0 8px 2px rgba(255, 255, 255, 0.26);
+            }
+    
+            50% {
+                box-shadow: 0 0 80px 0px #fff, 0 0 30px -4px #fff, 0 0 8px 2px rgba(255, 255, 255, 0.26);
+            }
+    
+            100% {
+                box-shadow: 0 0 160px 0px #fff, 0 0 30px -4px #fff, 0 0 8px 2px rgba(255, 255, 255, 0.26);
+            }
+        }
+    
+        @keyframes rotate {
+            0% {
+                -webkit-transform: rotate(0deg);
+            }
+    
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+    
+        .title {
+            font-family: 'PyeongChangPeace-Bold';
+            font-size: 100px;
+            line-height: 27vw;
+            position: absolute;
+            width: 60vw;
+            top: 30%;
+            left: 50%;
+            transform: translateX(-50%);
+    
+        }
+    
+        .title {
+            animation: title 1s ease infinite;
+            -moz-animation: title 1s ease infinite;
+            -webkit-animation: title 2s ease infinite;
+        }
+    
+        @keyframes title {
+    
+            0%,
+            100% {
+                text-shadow: 0 0 1vw #FDF7E5, 0 0 3vw #ffaa01, 0 0 10vw #d4b134, 0 0 10vw #F3D460, 0 0 .4vw #F3D460, .5vw .5vw .1vw #F3D460;
+                color: #FDF7E5;
+            }
+    
+            /* 깜빡임 */
+            50% {
+                text-shadow: 0 0 .5vw #FDF7E5, 0 0 3vw #ffaa01, 0 0 1vw #d4b134, 0 0 10vw #F3D460, 0 0 .4vw #F3D460, .5vw .5vw .1vw #F3D460;
+                color: #f7efd4;
+            }
+        }
+    
+        .date {
+            position: absolute;
+            top: 60%;
+            right: 26%;
+            color: white;
+            display: flex;
+            font-family: 'GmarketSansMedium';
+    
+        }
+    
+        .desc {
+            position: absolute;
+            top: 64%;
+            right: 26%;
+            color: white;
+            display: flex;
+            font-family: 'GmarketSansMedium';
+        }
+    
+        p {
+            padding-top: 80px;
+            position: absolute;
+            left: 50%;
+            top: 70%;
+        }
+    
+        p span {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 24px;
+            height: 24px;
+            margin-left: -12px;
+            border-left: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: sdb 2s infinite;
+            animation: sdb 2s infinite;
+            opacity: 0;
+            box-sizing: border-box;
+        }
+    
+        p span:nth-of-type(1) {
+            -webkit-animation-delay: 0s;
+            animation-delay: 0s;
+        }
+    
+        p span:nth-of-type(2) {
+            top: 16px;
+            -webkit-animation-delay: .15s;
+            animation-delay: .15s;
+        }
+    
+        p span:nth-of-type(3) {
+            top: 32px;
+            -webkit-animation-delay: .3s;
+            animation-delay: .3s;
+        }
+    
+        @-webkit-keyframes sdb {
+            0% {
+                opacity: 0;
+            }
+    
+            50% {
+                opacity: 1;
+            }
+    
+            100% {
+                opacity: 0;
+            }
+        }
+    
+        @keyframes sdb {
+            0% {
+                opacity: 0;
+            }
+    
+            50% {
+                opacity: 1;
+            }
+    
+            100% {
+                opacity: 0;
+            }
+        }
+    
+        .boothmap-wrap {
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            width: 350px;
+            height: 381px;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 100%;
+            color: white;
+            font-size: 20px;
+            font-family: 'PyeongChangPeace-Bold';
+        }
+    
+        .boothranking-wrap {
+            position: absolute;
+            justify-content: center;
+            top: 180%;
+            color: white;
+            font-size: 20px;
+            font-family: 'PyeongChangPeace-Bold';
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    
+        /* 부스 슬라이드 */
+        .swiper {
+            width: 100%;
+        }
+    
+        .swiper-wrapper {
+            width: 100%;
+            height: 35em;
+            display: flex;
+            align-items: center;
+        }
+    
+        .card {
+            background-color: #e7e7e722;
+            border-radius: 2em;
+            box-shadow: 0 0 2em rgba(0, 0, 0, .2);
+            padding: 2em 1em;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin: 0 2em;
+            font-family: 'GmarketSansMedium';
+        }
+    
+        .swiper-slide:not(.swiper-slide-active) {
+            filter: blur(1px);
+        }
+    
+        .card__image {
+            width: 100%;
+            height: 15em;
+        }
+    
+        .card__image img {
+            width: 100%;
+            height: 50%;
+            object-fit: cover;
+            position: absolute;
+            left: 0%;
+            top: 0%;
+            border-radius: 2em 2em 0em 0em;
+            margin-bottom: 2px;
+        }
+    
+        .card__content {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20vw;
+            
+        }
+    
+        .card-intro {
+            width: 310px;
+            height: 100%;
+            color: white;
+            padding: 50px;
+            font-size: 15px;
+        }
+    
+        .boothNum {
+            font-size: 0.8rem;
+            position: relative;
+            top: -4em;
+            color: #DA6953;
+        }
+    
+        .booth_name {
+            font-size: 1.3rem;
+            font-weight: 500;
+            position: relative;
+            top: -2em;
+            font-weight: 700;
+            color: #ffff;
+        }
+    
+        .booth_info {
+            text-align: center;
+            font-size: 1rem;
+            color: #dadada;
+            font-weight: 100;
+            position: relative;
+            top: -1em;
+        }
+    
+        .card__btn {
+            background-color: #F7DD7D;
+            color: #fff;
+            font-size: 1rem;
+            text-transform: uppercase;
+            font-weight: 500;
+            border: none;
+            padding: .5em;
+            border-radius: .5em;
+            margin-top: .5em;
+            cursor: pointer;
+        }
+    
+    
+        /* 타임테이블 */
+    
+        .timetable-wrap {
+            position: absolute;
+            color: white;
+            font-size: 20px;
+            font-family: 'PyeongChangPeace-Bold';
+            position: absolute;
+            top: 268%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    
+        .bottombox {
+            font-family: 'GmarketSansMedium';
+            position: absolute;
+            top: 270%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    
+        .midbox {
+            width: 90vw;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+        }
+    
+        .bottombox {
+            width: 95vw;
+            margin-top: 10vw;
+            display: flex;
+            justify-content: space-around;
+    
+        }
+    
+        .bottombox_left,
+        .bottombox_mid,
+        .bottombox_right {
+            color: white;
+            display: flex;
+            flex-direction: column;
+    
+        }
+    
+        .bottombox_left {
+            width: 35vw;
+        }
+    
+        .bottombox_mid {
+            display: flex;
+            justify-content: center;
+        }
+    
+        .schedule_time {
+            margin: 10%;
+            font-size: 4vw;
+        }
+    
+        .bottombox_right {
+            width: 35vw;
+        }
+    
+        .day1 {
+            display: flex;
+            justify-content: center;
+        }
+    
+        .day1-1,
+        .day1-2,
+        .day1-3,
+        .day1-4 {
+            background-color: rgba(255, 255, 255, 0.199);
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2vw;
+            padding: 3vw;
+            font-size: 4vw;
+            font-weight: 900;
+        }
+    
+        .color_yellow {
+            color: rgb(255, 217, 0);
+        }
+    
+        .day1-1 {
+            height: 40%;
+            padding: 3vw;
+            display: flex;
+            flex-direction: column;
+    
+            align-items: center;
+    
+            margin-top: 13%;
+            margin-bottom: 10px;
+            font-size: 4vw;
+            font-weight: 900;
+    
+        }
+    
+        .day1-2 {
+            margin-top: 3%;
+            height: 15%;
+            display: flex;
+            flex-direction: column;
+    
+        }
+    
+        .day1-3 {
+            margin-top: 3%;
+            height: 13%;
+            display: flex;
+            flex-direction: column;
+        }
+    
+        .day1-4 {
+            margin-top: 3%;
+            height: 22%;
+            display: flex;
+            flex-direction: column;
+    
+        }
+    
+    
+    
+        .day2 {
+            display: flex;
+            justify-content: center;
+        }
+    
+        .place {
+            width: 25vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1vw;
+            margin-bottom: 1vw;
+            font-size: 10px;
+            font-weight: 100;
+        }
+    
+        .booth {
+            width: 20vw;
+            height: 6vw;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(255, 255, 255, 0.295);
+            border: 0px;
+            border-radius: 1.7vw;
+            font-size: 2.7vw;
+            font-weight: 900;
+            color: white;
+        }
+    
+        .celebrity_img {
+            width: 5vw;
+        }
+    
+        .celebrity {
+            width: 25vw;
+            display: flex;
+            justify-content: start;
+            align-items: center;
+            font-size: 1vw;
+        }
+    
+        .celebrity2 {
+            width: 25vw;
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            font-size: 1vw;
+        }
+    
+        /* 방명록 */
+        .comment-wrap {
+            position: absolute;
+            top: 370%;
+            left: 50%;
+            transform: translateX(-50%);
+            flex-direction: column;
+            margin-bottom: 20%;
+            height: 100%;
+            font-size: 10vw;
+            font-weight: 900;
+            color: #FDF7E5;
+    
+        }
+    
+        .comment-title {
+            color: white;
+            font-size: 20px;
+            font-family: 'PyeongChangPeace-Bold';
+            margin-bottom: 25px;
+        }
+    
+        .enter_button {
+            width: 43vw;
+            height: 12vw;
+            border: 0px;
+            background-color: blanchedalmond;
+            border-radius: 5vw;
+            font-size: 4vw;
+            color: #1D0041;
+            font-weight: 900;
+            margin-top: 5%;
+            cursor: pointer;
+        }
+    
+        .Comment {
+            height: 30vh;
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 1%;
+            background-color: #e7e7e722;
+    
+        }
+    
+        .Comment_inbox {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .Comment_contain_outbox {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+    
+        .Comment_contain {
+            width: 95vw;
+            height: 30vw;
+            padding: 5%;
+            margin-bottom: 2vw;
+            border-radius: 3vw;
+            background-color: #FDF7E5;
+            font-family: 'GmarketSansMedium';
+            font-weight: 100;
+            color: black;
+            font-size: 16px;
+            display: flex;
+        }
+    
+        ._3minutes {
+            display: flex;
+            justify-content: end;
+            align-items: end;
+            font-size: 3vw;
+            font-weight: 100;
+    
+        }
+    
+        .Comment_memo {
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            font-weight: 100;
+            margin-top: 3%;
+            font-family: 'GmarketSansMedium';
+            font-size: 15px;
+        }
+    
+    
+        /* 만든이들 */
+        .made-wrap {
+            position: absolute;
+            top: 70%;
+            color: white;
+            font-size: 20px;
+            font-family: 'PyeongChangPeace-Bold';
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    
+        .logo {
+            margin-top: 20px;
+        }
+    
+        .introduce {
+            width: 300px;
+            font-family: 'GmarketSansMedium';
+            font-weight: 100;
+            font-size: 14px;
+        }
+    
+    
+        /* 푸터 */
+        .footer {
+            position: absolute;
+            top: 140%;
+            color: white;
+            font-size: 12px;
+            font-family: 'GmarketSansMedium';
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 100;
+            border-top: 0.5px solid white;
+            width: 90%;
+            padding: 30px;
+        }
+
+}
+
+
+
+/* 데스크톱 화면 */
+@media all and (min-width:768px) and (max-width:2000px) {
+
+    .title .avatar {
+        width: 40px;
+        height: 40px;
+        background-image: url(../img/avatar.jpg);
+        display: inline-block;
+        border-radius: 50%;
+        background-size: 100%;
+    }
+
+    .noite {
+        background: -webkit-linear-gradient(top, rgb(0, 0, 0) 50%, rgb(45, 34, 71)80%, rgb(42, 31, 62));
+        width: 100%;
+        height: 1100%;
+        position: absolute;
+        /*     overflow: hidden; */
+    }
+
+    .constelacao {
+        /* position: absolute; */
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        animation: rotate 600s infinite linear;
+    }
+
+    .estrela {
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        animation-name: estrela;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+    }
+
+    .estrela.style1 {
+        animation-duration: 0.5s;
+        animation-name: estrela;
+    }
+
+    .estrela.style2 {
+        animation-duration: 1s;
+        animation-name: estrela;
+    }
+
+    .estrela.style3 {
+        animation-duration: 1.5s;
+        animation-name: estrela;
+    }
+
+    .estrela.style4 {
+        animation-duration: 2s;
+        animation-name: estrelaDestacada;
+    }
+
+    .estrela.tam1 {
+        width: 1px;
+        height: 1px;
+    }
+
+    .estrela.tam2 {
+        width: 2px;
+        height: 2px;
+    }
+
+    .estrela.tam3 {
+        width: 3px;
+        height: 3px;
+    }
+
+    .estrela.opacity1 {
+        opacity: 1;
+    }
+
+    .estrela.opacity2 {
+        opacity: .5;
+    }
+
+    .estrela.opacity3 {
+        opacity: .1;
+    }
+
+    .meteoro {
+        /* position: absolute; */
+        background-color: #fff;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        transform: rotate(-35deg);
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 1s;
+    }
+
+    .meteoro:before {
+        content: "";
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 10px;
+        width: 0;
+        height: 0;
+        border-top: 1px solid transparent;
+        border-bottom: 1px solid transparent;
+        border-left: 85px solid white;
+        position: absolute;
+        left: 2px;
+        top: 0;
+    }
+
+    .meteoro.style1 {
+        animation-name: meteoroStyle1;
+    }
+
+    .meteoro.style2 {
+        animation-name: meteoroStyle2;
+    }
+
+    .meteoro.style3 {
+        animation-name: meteoroStyle3;
+    }
+
+    .meteoro.style4 {
+        animation-name: meteoroStyle4;
+    }
+
+    .lua {
+        position: absolute;
+        right: -50px;
+        top: -100px;
+        width: 450px;
+        height: 450px;
+        border-radius: 50%;
+        box-shadow: 0 0 160px 0px #fff, 0 0 30px -4px #fff, 0 0 8px 2px rgba(255, 255, 255, 0.26);
+        background-color: #fff;
+        animation-name: lua;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-duration: 10s;
+    }
+
+    .lua .textura {
+        background-image: url(https://raw.githubusercontent.com/interaminense/starry-sky/master/src/img/bgMoon.png);
+        background-position: center;
+        background-size: 100%;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        border-radius: 50%;
+        overflow: hidden;
+        opacity: 0.4;
+    }
+
+    .floresta {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .floresta img {
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+
+    @keyframes escurecer {
+        0% {
+            top: 0;
+        }
+
+        100% {
+            top: 100%;
+        }
+    }
+
+    @keyframes estrela {
+        0% {
+            box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+        }
+
+        50% {
+            box-shadow: 0 0 10px 2px rgba(255, 255, 255, 0.4);
+        }
+
+        100% {
+            box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.05);
+        }
+    }
+
+    @keyframes estrelaDestacada {
+        0% {
+            background-color: #FFFFFF;
+            box-shadow: 0 0 10px 0px rgba(255, 255, 255, 1);
+        }
+
+        20% {
+            background-color: #FFC4C4;
+            box-shadow: 0 0 10px 0px rgb(255, 196, 196, 1);
+        }
+
+        80% {
+            background-color: #C4CFFF;
+            box-shadow: 0 0 10px 0px rgb(196, 207, 255, 1);
+        }
+
+        100% {
+            background-color: #FFFFFF;
+            box-shadow: 0 0 10px 0px rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    @keyframes meteoroStyle1 {
+        0% {
+            opacity: 0;
+            right: 300px;
+            top: 100px;
+        }
+
+        30% {
+            opacity: .3;
+        }
+
+        60% {
+            opacity: .3;
+        }
+
+        100% {
+            opacity: 0;
+            right: 1000px;
+            top: 600px;
+        }
+    }
+
+    @keyframes meteoroStyle2 {
+        0% {
+            opacity: 0;
+            right: 700px;
+            top: 100px;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        60% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            right: 1400px;
+            top: 600px;
+        }
+    }
+
+    @keyframes meteoroStyle3 {
+        0% {
+            opacity: 0;
+            right: 300px;
+            top: 300px;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        60% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            right: 1000px;
+            top: 800px;
+        }
+    }
+
+    @keyframes meteoroStyle4 {
+        0% {
+            opacity: 0;
+            right: 700px;
+            top: 300px;
+        }
+
+        30% {
+            opacity: 1;
+        }
+
+        60% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+            right: 1400px;
+            top: 800px;
+        }
+    }
+
+    @keyframes lua {
+        0% {
+            box-shadow: 0 0 160px 0px #fff, 0 0 30px -4px #fff, 0 0 8px 2px rgba(255, 255, 255, 0.26);
+        }
+
+        50% {
+            box-shadow: 0 0 80px 0px #fff, 0 0 30px -4px #fff, 0 0 8px 2px rgba(255, 255, 255, 0.26);
+        }
+
+        100% {
+            box-shadow: 0 0 160px 0px #fff, 0 0 30px -4px #fff, 0 0 8px 2px rgba(255, 255, 255, 0.26);
+        }
+    }
+
+    @keyframes rotate {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+    }
+
+    .title {
+        font-family: 'PyeongChangPeace-Bold';
+        font-size: 150px;
+        line-height: 27vw;
+        position: absolute;
+        width: 60vw;
+        top: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    .title {
+        animation: title 1s ease infinite;
+        -moz-animation: title 1s ease infinite;
+        -webkit-animation: title 2s ease infinite;
+    }
+
+    @keyframes title {
+
+        0%,
+        100% {
+            text-shadow: 0 0 1vw #FDF7E5, 0 0 3vw #ffaa01, 0 0 10vw #d4b134, 0 0 10vw #F3D460, 0 0 .4vw #F3D460, .5vw .5vw .1vw #F3D460;
+            color: #FDF7E5;
+        }
+
+        /* 깜빡임 */
+        50% {
+            text-shadow: 0 0 .5vw #FDF7E5, 0 0 3vw #ffaa01, 0 0 1vw #d4b134, 0 0 10vw #F3D460, 0 0 .4vw #F3D460, .5vw .5vw .1vw #F3D460;
+            color: #f7efd4;
+        }
+    }
+
+    .date {
+        position: absolute;
+        top: 65%;
+        right: 26%;
+        color: white;
+        display: flex;
+        font-family: 'GmarketSansMedium';
+        font-size: 30px;
+
+    }
+
+    .desc {
+        position: absolute;
+        top: 72%;
+        right: 26%;
+        color: white;
+        display: flex;
+        font-family: 'GmarketSansMedium';
+        font-size: 30px;
+    }
+
+    p {
+        padding-top: 80px;
+        position: absolute;
+        left: 50%;
+        top: 83%;
+    }
+
+    p span {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        margin-left: -12px;
+        border-left: 1px solid #fff;
+        border-bottom: 1px solid #fff;
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-animation: sdb 2s infinite;
+        animation: sdb 2s infinite;
+        opacity: 0;
+        box-sizing: border-box;
+    }
+
+    p span:nth-of-type(1) {
+        -webkit-animation-delay: 0s;
+        animation-delay: 0s;
+    }
+
+    p span:nth-of-type(2) {
+        top: 16px;
+        -webkit-animation-delay: .15s;
+        animation-delay: .15s;
+    }
+
+    p span:nth-of-type(3) {
+        top: 32px;
+        -webkit-animation-delay: .3s;
+        animation-delay: .3s;
+    }
+
+    @-webkit-keyframes sdb {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes sdb {
+        0% {
+            opacity: 0;
+        }
+
+        50% {
+            opacity: 1;
+        }
+
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .boothmap-wrap {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        width: 350px;
+        height: 381px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 105%;
+        color: white;
+        font-size: 20px;
+        font-family: 'PyeongChangPeace-Bold';
+    }
+
+    .boothranking-wrap {
+        position: absolute;
+        justify-content: center;
+        top: 180%;
+        color: white;
+        font-size: 20px;
+        font-family: 'PyeongChangPeace-Bold';
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    /* 부스 슬라이드 */
+    .swiper {
+        width: 100%;
+    }
+
+    .swiper-wrapper {
+        width: 100%;
+        height: 35em;
+        display: flex;
+        align-items: center;
+    }
+
+    .card {
+        background-color: #e7e7e722;
+        border-radius: 2em;
+        box-shadow: 0 0 2em rgba(0, 0, 0, .2);
+        padding: 2em 1em;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 2em;
+        font-family: 'GmarketSansMedium';
+    }
+
+    .swiper-slide:not(.swiper-slide-active) {
+        filter: blur(1px);
+    }
+
+    .card__image {
+        width: 100%;
+        height: 15em;
+    }
+
+    .card__image img {
+        width: 100%;
+        height: 50%;
+        object-fit: cover;
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        border-radius: 2em 2em 0em 0em;
+        margin-bottom: 2px;
+    }
+
+    .card__content {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20vw;
+    }
+
+    .card-intro {
+        width: 310px;
+        height: 100%;
+        color: white;
+        padding: 50px;
+        font-size: 15px;
+    }
+
+    .boothNum {
+        font-size: 0.8rem;
+        position: relative;
+        top: -4em;
+        color: #DA6953;
+    }
+
+    .booth_name {
+        font-size: 1.3rem;
+        font-weight: 500;
+        position: relative;
+        top: -2em;
+        font-weight: 700;
+        color: #ffff;
+    }
+
+    .booth_info {
+        text-align: center;
+        font-size: 1rem;
+        color: #dadada;
+        font-weight: 100;
+        position: relative;
+        top: -1em;
+    }
+
+    .card__btn {
+        background-color: #F7DD7D;
+        color: #fff;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 500;
+        border: none;
+        padding: .5em;
+        border-radius: .5em;
+        margin-top: .5em;
+        cursor: pointer;
+    }
+
+
+    /* 타임테이블 */
+
+    .timetable-wrap {
+        position: absolute;
+        color: white;
+        font-size: 20px;
+        font-family: 'PyeongChangPeace-Bold';
+        position: absolute;
+        top: 268%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .bottombox {
+        font-family: 'GmarketSansMedium';
+        position: absolute;
+        top: 255%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .midbox {
+        width: 90vw;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .bottombox {
+        width: 50vw;
+        margin-top: 10vw;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .bottombox_left,
+    .bottombox_mid,
+    .bottombox_right {
+        color: white;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .bottombox_left {
+        width: 25vw;
+    }
+
+    .bottombox_mid {
+        display: flex;
+        justify-content: center;
+    }
+
+    .schedule_time {
+        margin: 17%;
+        margin-bottom: 10%;
+        margin-left: 30px;
+        margin-right: 30px;
+        font-size: 1.6vw;
+
+    }
+
+    .bottombox_right {
+        width: 25vw;
+    }
+
+    .day1 {
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .day1-1,
+    .day1-2,
+    .day1-3,
+    .day1-4 {
+        background-color: rgba(255, 255, 255, 0.199);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2vw;
+        padding: 3vw;
+        font-size: 2vw;
+        font-weight: 900;
+    }
+
+    .color_yellow {
+        color: rgb(255, 217, 0);
+    }
+
+    .day1-1 {
+        height: 40%;
+        padding: 3vw;
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        margin-top: 13%;
+        margin-bottom: 10px;
+        font-size: 2vw;
+        font-weight: 900;
+
+    }
+
+    .day1-2 {
+        margin-top: 3%;
+        height: 15%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .day1-3 {
+        margin-top: 3%;
+        height: 13%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .day1-4 {
+        margin-top: 3%;
+        height: 22%;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+
+
+    .day2 {
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .place {
+        width: 25vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1vw;
+        margin-bottom: 1vw;
+        font-size: 15px;
+        font-weight: 100;
+    }
+
+    .booth {
+        width: 10vw;
+        height: 3vw;
+        cursor: pointer;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.295);
+        border: 0px;
+        border-radius: 1.7vw;
+        font-size: 1vw;
+        font-weight: 900;
+        color: white;
+    }
+
+    .celebrity_img {
+        width: 5vw;
+    }
+
+    .celebrity {
+        width: 25vw;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        font-size: 1vw;
+    }
+
+    .celebrity2 {
+        width: 25vw;
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        font-size: 1vw;
+    }
+
+    /* 방명록 */
+    .comment-wrap {
+        position: absolute;
+        top: 445%;
+        left: 50%;
+        transform: translateX(-50%);
+        flex-direction: column;
+        font-size: 10vw;
+        font-weight: 900;
+        color: #FDF7E5;
+
+    }
+
+    .comment-title {
+        color: white;
+        font-size: 20px;
+        font-family: 'PyeongChangPeace-Bold';
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        top: -10%;
+    }
+
+    .enter_button {
+        width: 15vw;
+        height: 4vw;
+        border: 0px;
+        background-color: blanchedalmond;
+        border-radius: 5vw;
+        font-size: 1vw;
+        color: #1D0041;
+        font-weight: 600;
+        margin-top: 10%;
+        cursor: pointer;
+    }
+
+    .Comment {
+        height: 40vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 1%;
+        background-color: #e7e7e722;
+
+    }
+
+    .Comment_inbox {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .Comment_contain_outbox {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .Comment_contain {
+        width: 60vw;
+        padding: 4%;
+        margin-bottom: 2vw;
+        border-radius: 3vw;
+        background-color: #FDF7E5;
+        font-family: 'GmarketSansMedium';
+        font-weight: 100;
+        color: black;
+        font-size: 20px;
+        display: flex;
+        position: absolute;
+        top: 5%;
+    }
+
+    ._3minutes {
+
+        font-size: 14px;
+        font-weight: 100;
+        margin : 40px 0px 0px -315px;
+    }
+
+    .Comment_memo {
+        width: 100%;
+        font-weight: 100;
+        margin-top: 4.5%;
+        font-family: 'GmarketSansMedium';
+        font-size: 17px;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+
+    /* 만든이들 */
+    .made-wrap {
+        position: absolute;
+        top: 120%;
+        color: white;
+        font-size: 20px;
+        font-family: 'PyeongChangPeace-Bold';
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .logo {
+        margin-top: 20px;
+    }
+
+    .introduce {
+        width: 300px;
+        font-family: 'GmarketSansMedium';
+        font-weight: 100;
+        font-size: 14px;
+    }
+
+
+    /* 푸터 */
+    .footer {
+        position: absolute;
+        top: 200%;
+        color: white;
+        font-size: 12px;
+        font-family: 'GmarketSansMedium';
+        left: 50%;
+        transform: translateX(-50%);
+        font-weight: 100;
+        border-top: 0.5px solid white;
+        width: 90%;
+        padding: 30px;
+    }
+
+}
