@@ -63,83 +63,14 @@
             {% for introduce in intruduce_list%}
             {% comment %} <img src = "{% static "pngwing.com (1).png" %}" style = "margin-top:{{introduce.x}}vw ; width: 2vw; height: 2vw; " class = "move" value = "{{introduce.title}}" id = "move"> {% endcomment %}
             {% comment %} onclick="goToScroll('{{introduce.title}}')" {% endcomment %}
-            <button id="myid" value = "{{introduce.title}}" class = "move" ><img src = "{% static "img/pngwing.com (1).png" %}" style = "width: 2vw; height : 2vw;"></button>
+            <button id="myid" value = "{{introduce.title}}" class = "move" style = "margin-top:{{introduce.x}}vw ;margin-left:{{introduce.y}}vw ;"><img src = "{% static "img/pngwing.com (1).png" %}" style = "width: 2vw; height : 2vw; "></button>
             {% endfor %}
         </div>
         
         <div class="bottombox">
             <div class = "scroll" id = "scroll">
                 <div id = "target"></div>
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
+                
                 {% for post in intruduce_list %}
                 
                 <div class="booth_outbox"  id = "{{post.title}}">
@@ -166,105 +97,7 @@
                         <div class="introduce">{{ post.shortin }}</div>
                     </div>
                 </div>
-            {% endfor %}
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
-                <div class="booth_outbox">
-                    <div class="booth_image">
-                        <img src="{% static "hanseo.png" %}" alt="Hanseo Logo" class="hanseo_img">
-                    </div>
-                    <div class="booth">
-                        <div class="heart_outbox">
-                            <div class="place">위치</div>
-                            <div class="heart"></div>
-                        </div>
-                        
-                        <div class="booth_name">부스이름</div>
-                        <div class="introduce">간단소개</div>
-                    </div>
-                </div>
+            {% endfor %}              
 
 
             </div>

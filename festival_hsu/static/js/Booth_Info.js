@@ -10,8 +10,8 @@ $(document).ready(function () {
 
         console.log(offset2)
         if (offset2.top =! 381.9375){
-            $('#scroll').animate({scrollTop: 0});
-            $('#scroll').animate({scrollTop: offset.top -400}, 1000);
+            $('#scroll').animate({scrollTop: 0},1000,function(){$(this).animate({scrollTop: offset.top -400}, 1000)});
+            // $('#scroll').animate({scrollTop: offset.top -400}, 1000);
         } else {
             $('#scroll').animate({scrollTop: offset.top -400}, 1000);
         }
