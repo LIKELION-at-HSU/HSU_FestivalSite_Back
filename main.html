@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <!-- Link Swiper's CSS -->
+    <style>
+        @font-face {
+            font-family: 'PyeongChangPeace-Bold';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'GmarketSansMedium';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{% static "css/main.css" %}">
+</head>
+
+<body>
+    <div class="noite"></div> <!-- 밤하늘 배경 -->
+    <div class="constelacao"></div> <!-- 별 -->
+    <div class="lua">
+        <div class="textura"></div>  <!-- 달 -->
+    </div> 
+
+    <div class="title">동그라미</div>
+    <div class="intro-wrap">
+        <div class="date">
+            OCTOBER &nbsp <span style="color: #F7DD7D;">5-6&nbsp;</span>, 2023
+        </div>
+        <div class="desc">
+            <div>한서대학교 대동제 &nbsp <span style="color: #DA6953;">동그라미</span></div>
+        </div>
+
+        <p><span></span><span></span><span></span></p>
+    </div>
+
+
+    <div class="boothmap-wrap">BOOTH MAP
+        <!-- 지도를 표시할 div 입니다 -->
+        <div id="map" style="width:100%;height:350px;position: absolute;top: 13%;">
+            {% comment %} <img  src="{% static "img/KakaoTalk_20230916_162421195.jpg" %}" class="hanseo_map" alt="hanseo_map" id = "dl"> {% endcomment %}
+        </div>
+    </div>
+
+    <!-- 부스 슬라이드 -->
+    <div class="boothranking-wrap">BOOTH RANKING</div>
+    <section class="swiper mySwiper" style="position: absolute; top: 186%;">
+        <div class="swiper-wrapper">
+            <div class="card swiper-slide" style="width: 250px;">
+                <div class="card__content">
+                    <div class="card-intro">
+                        Tip! <br><br>
+                        슬라이드를 <span style="color: #F3D460;">좌우</span>로 제스쳐하여
+                        <span style="color: #F3D460;">현재 가장 인기있는 부스 5개</span>를 확인할 수 있어요! <br><br>
+                        <span style="color: #DA6953;">주황색 글자</span>는 부스 위치입니다. <br>
+                    </div>
+                    <!-- <button class="card__btn">View More</button> -->
+                </div>
+            </div>
+            {% for intruduce in intruduce_list %}
+            <div class="card swiper-slide" style="width: 250px;">
+                
+                
+                {% if intruduce.imagecheack == none  %}
+                    <div class="card__image">
+                        <img src="{% static "/img/귀엽당.png" %}" alt="card image">
+                    </div>
+                {% else %}
+                    <div class="card__image">
+                        <img src="{{ intruduce.image.url }}" alt="card image">
+                    </div>
+                {% endif %}
+                
+                
+                <div class="card__content">
+                    <span class="boothNum">{{intruduce.loc}}</span>
+                    <span class="booth_name">{{intruduce.title}}</span>
+                    <span class="booth_info">{{intruduce.shortin}}</span>
+                    <a class="card__btn" href="{{intruduce.get_absolute_url}}" style = "text-decoration: none;">View More</a>
+                </div>
+            </div>
+        {% endfor %}
+            
+        </div>
+    </section>
+    <!-- 타임테이블 -->
+    <div class="timetable-wrap">TIME TABLE</div>
+    <div class="bottombox">
+        <div class="bottombox_left">
+            <div class="day1"> 10.5 (목) </div>
+            <div class="day1-1">주간부스사업
+                <div class="place">
+                    📍 인곡관 조각공원
+                </div>
+                <button class="booth" onclick = "location.href = 'intru/'">부스 보러가기</button>
+            </div>
+            <div class="day1-2">동아리 공연
+                <div class="place">
+                    📍 대운동장
+                </div>
+            </div>
+            <div class="day1-3">행사
+                <div class="place">
+                    📍 인곡관 조각공원
+                </div>
+            </div>
+            <div class="day1-4">연예인 공연
+                <div class="place">
+                    📍 대운동장
+                </div>
+                <div class="celebrity">
+                    <img src="{% static "/img/BIBI.jpg" %}" alt="celebrity" class="celebrity_img" style="width: 25px; height: 25px; object-fit: cover; border-radius : 50%">
+                    비비(BIBI)
+                </div>
+                <div class="celebrity2">
+                    최예나(YENA)
+                    <img src="{% static "/img/yena.png" %}" alt="celebrity" class="celebrity_img" style="width: 25px; height: 25px; object-fit: cover; border-radius : 50%">
+                </div>
+            </div>
+        </div>
+        <div class="bottombox_mid">
+            <div class="schedule_time">TIME</div>
+            <div class="schedule_time">10:00</div>
+            <div class="schedule_time">11:00</div>
+            <div class="schedule_time">12:00</div>
+            <div class="schedule_time">13:00</div>
+            <div class="schedule_time">14:00</div>
+            <div class="schedule_time">15:00</div>
+            <div class="schedule_time">16:00</div>
+            <div class="schedule_time color_yellow">16:30</div>
+            <div class="schedule_time">17:00</div>
+            <div class="schedule_time">17:30</div>
+            <div class="schedule_time">18:00</div>
+            <div class="schedule_time color_yellow">18:30</div>
+            <div class="schedule_time">19:00</div>
+            <div class="schedule_time">20:00</div>
+            <div class="schedule_time">21:00</div>
+        </div>
+        <div class="bottombox_right">
+            <div class="day2"> 10.6 (금) </div>
+            <div class="day1-1">주간부스사업
+                <div class="place">
+                    📍 인곡관 조각공원
+                </div>
+                <button class="booth" onclick = "location.href = 'intru/'">부스 보러가기</button>
+            </div>
+            <div class="day1-2">동아리 공연
+                <div class="place">
+                    📍 대운동장
+                </div>
+            </div>
+            <div class="day1-3">행사
+                <div class="place">
+                    📍 인곡관 조각공원
+                </div>
+            </div>
+            <div class="day1-4">연예인 공연
+                <div class="place">
+                    📍 대운동장
+                </div>
+                <div class="celebrity">
+                    
+                    <img src="{% static "/img/unedu.png" %}" alt="celebrity" class="celebrity_img" style="width: 25px; height: 25px; object-fit: cover; border-radius : 50%">
+                    
+                    
+                    수퍼비(SUPERBEE)
+                </div>
+                <div class="celebrity2">
+                    언에듀케이티드 키드
+                    <img src="{% static "/img/super.png" %}" alt="celebrity" class="celebrity_img" style="width: 25px; height: 25px; object-fit: cover; border-radius : 50%">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 방명록 -->
+    <div class="comment-wrap">
+        <div class="comment-title">GUEST BOOK</div>
+        <div class="Comment">
+            <div class="Comment_inbox">
+                <div class="Comment_contain_outbox">
+                    <div class="Comment_contain">ex)&nbsp;<span style="color: #5900a1;">멋쟁이 사자처럼 부스</span>에서 간식 줘요!
+                        <div class="_3minutes">
+                            <div>3분전</div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="Comment_introduce">
+                    <div class="Comment_memo">축제 부스 웹에 방명록을 남기면 멋쟁이 사자처럼 부스에서 <br>
+                    <span style="color: #F7DD7D;">선물</span>을 뽑을 수 있어요!</div>
+                </div>
+            </div>
+        </div>
+        <button class="enter_button" onclick = "location.href = 'comments/'"style = "text-decoration: none;">방명록 남기러가기</button>
+
+        <div class="made-wrap">
+            <div class="made-title">MADE</div>
+            <img src="./img/likelion.png" alt="" class="logo">
+            <div class="introduce">
+                한서대학교 웹 개발 중앙동아리<br><span style="color: #F7DD7D;">멋쟁이사자처럼 11기</span>에서<br>
+                한서대학교 대동제 <span style="color:#E2935A">동그라미</span>와 함께합니다.
+            </div>
+            <button class="enter_button" onclick = "location.href = 'about/'" style = "text-decoration: none;">자세히보기</button>
+
+        </div>
+
+        <div class="footer">
+            한서대학교 멋쟁이 사자처럼 <br>
+            LIKE LION HSU
+        </div>
+    </div>
+
+    </html>
+
+
+
+<!-- 자바스크립트 -->
+
+    <script type="text/javascript"
+        src="//dapi.kakao.com/v2/maps/sdk.js?appkey=292c9387997a53c1249c42c78fc03303"></script>
+    <script>
+        /* 카카오 지도 api */
+        var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = {
+                center: new kakao.maps.LatLng(36.6907826128832, 126.58471727115253), // 지도의 중심좌표
+                level: 4, // 지도의 확대 레벨
+                draggable: false   // 지도 이동 막기
+            };
+
+        // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+        var map = new kakao.maps.Map(mapContainer, mapOption);
+        
+        /* 인곡관(부스) */
+        // 마커가 표시될 위치입니다 
+            var markerPosition = new kakao.maps.LatLng(36.69127051599943, 126.58444330638731);
+
+            // 마커를 생성합니다
+            var marker = new kakao.maps.Marker({
+                position: markerPosition
+            });
+
+            // 마커가 지도 위에 표시되도록 설정합니다
+            marker.setMap(map);
+
+            var iwContent = '<div style="padding:5px; color:black; font-size:13px; font-family: GmarketSansMedium; width:150px">인곡관(주간부스사업) <br><a href="intru/" style="color:#DA6953" target="_blank">부스 정보 보기</a> </div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                iwPosition = new kakao.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
+
+            // 인포윈도우를 생성합니다
+            var infowindow = new kakao.maps.InfoWindow({
+                position: iwPosition,
+                content: iwContent
+            });
+
+            // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+            infowindow.open(map, marker); 
+            
+            /* 대운동장(공연정보) */
+            // 마커가 표시될 위치입니다 
+                var markerPosition = new kakao.maps.LatLng(36.69064869459938, 126.58832092384634);
+
+                // 마커를 생성합니다
+                var marker = new kakao.maps.Marker({
+                    position: markerPosition
+                });
+
+                // 마커가 지도 위에 표시되도록 설정합니다
+                marker.setMap(map);
+
+                var iwContent = '<div style="padding:5px; color:black; font-size:13px; font-family: GmarketSansMedium; width:150px">대운동장(공연 및 행사) <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:#DA6953" target="_blank">공연 정보 보기</a> </div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                    iwPosition = new kakao.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
+
+                // 인포윈도우를 생성합니다
+                var infowindow = new kakao.maps.InfoWindow({
+                    position: iwPosition,
+                    content: iwContent
+                });
+
+                // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+                infowindow.open(map, marker); 
+
+                function setDraggable(draggable) {
+                        // 마우스 드래그로 지도 이동 가능여부를 설정합니다
+                        map.setDraggable(draggable);
+                    }
+    </script>
+
+    <!-- Swiper JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    
+    <!-- Initialize Swiper -->
+    <script type="text/javascript">
+        var swiper = new Swiper(".mySwiper", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 300,
+                modifier: 1,
+                slideShadows: false,
+            },
+            pagination: {
+                el: ".swiper-pagination",
+            },
+        });
+    
+    </script>
+    <script type="text/javascript" src="{% static "js/script.js" %}"></script>
+
+</body>
+
+</html>
