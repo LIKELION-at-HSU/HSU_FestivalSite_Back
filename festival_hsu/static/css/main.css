@@ -24,7 +24,6 @@
     
         .title {
             animation: title 1s ease infinite;
-            /* -moz-animation: title 1s ease infinite; */
             -webkit-animation: title 2s ease infinite;
         }
     
