@@ -21,12 +21,4 @@ class intruduce(models.Model):
     
     def like_url(self):
         return f'/intru/like/{self.pk}/'
-    #     self.likecount = self.likecount + 1
-    #     self.save()
-    #     return f"" 
-
-class menu(models.Model):
-    name = models.CharField(max_length=50) # 메뉴이름
-    price = models.PositiveIntegerField(default=0)#가격
-    intru = models.ForeignKey(intruduce,on_delete=models.CASCADE)
 

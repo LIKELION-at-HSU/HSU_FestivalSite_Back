@@ -18,13 +18,12 @@ from django.contrib import admin
 from django.urls import path,include
 from guest_book import views as gv
 from django.conf import settings 
-from django.conf.urls.static import static 
-from  main import views
+from django.conf.urls.static import static
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('intru/',include('thumbs_up.urls')),
     path('',include('main.urls')),
-    path('comments/', gv.index, name="comments"),
-    path("about/",views.about)
+    path('comments/', gv.index, name="comments")
 ]
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 

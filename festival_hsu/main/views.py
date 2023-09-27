@@ -1,6 +1,5 @@
-from multiprocessing import context
 from django.shortcuts import render
-from thumbs_up.models import intruduce,menu
+from thumbs_up.models import intruduce
 
 
 def main(request):

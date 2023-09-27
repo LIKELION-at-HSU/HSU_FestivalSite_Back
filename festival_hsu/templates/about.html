@@ -1,114 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-{% load static %}
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+{% extends "baseDetail.html" %} 
+{% load static %} 
+
+{% block css %}
     <link rel="stylesheet" href="{% static "css/about.css" %}" >
-    <script src="{% static "js/about.js" %}"></script>
-    <style>
-        @font-face {
-            font-family: "ulsanjunggu";
-            src: url("{% static "ttf/ulsanjunggu.ttf" %}") format("truetype");
-            font-weight: normal;
-        }
-        @font-face {
-            font-family: "Gmarket";
-            src: url("{% static "ttf/GmarketSansTTFMedium.ttf" %}") format("truetype");
-            font-weight: normal;
-        }
-        @font-face {
-            font-family: "Gmarket2";
-            src: url("{% static "ttf/GmarketSansTTFLight.ttf" %}") format("truetype");
-            font-weight: normal;
-        }
-        @font-face {
-            font-family: 'GmarketSansB';
-            src: url("{% static "ttf/GmarketSansTTFBold.ttf" %}") format("truetype");
-            font-weight: normal;
-        }
-    </style>
-    <title>about_front</title>
-</head>
+{% endblock css %}
 
-<body>
-    <div class="main">
-            
-        <div class="topbox">
-            <div class="동그라미">동그라미</div>
-            <div class="한서대대동제-outbox">
-                <div class="한서대대동제">한서대<br>대동제</div>
-            </div>
-        </div>
-        <div class="midbox">
-            <hr>
-            <div class="ABOUT">
-                ABOUT
-            </div>
-            <hr>
-        </div>
-        
-        <div class="container">
-            
-            <div class="profil-box">
-                <div class="end">
-                    Front - end
-                </div>
-                <div class="p-b">
-                    <div class="profil">
-                        <img src="{% static "img/LHB.png" %}" width="130px", height="130px" alt="이하빈">
-                        <div class="name"><strong>이하빈</strong></div>
-                        <div class="major"><strong>항공소프트웨어공학과 22</strong></div>
-                    </div>
-                    <div class="profil">
-                        <img src="{% static "img/HSI.png" %}" width="140px", height="140px" alt="홍성인">
-                        <div class="H_name"><strong>홍성인</strong></div>
-                        <div class="major"><strong>항공컴퓨터공학과 20</strong></div>
-                    </div>
-                </div>
-            </div>
-            
-            
-            <div class="profil-box">
-                <div class="end">
-                    back - end
-                </div>
-                <div class="p-b">
-                    <div class="profil">
-                        <img src="{% static "img/LKH.png" %}" width="130px", height="130px" alt="이가현">
-                        <div class="name"><strong>이가현</strong></div>
-                        <div class="major"><strong>항공소프트웨어공학과 19</strong></div>
-                    </div>
-                    <div class="profil">
-                        <img src="{% static "img/LSM.png" %}" width="130px", height="130px" alt="이승민">
-                        <div class="name"><strong>이승민</strong></div>
-                        <div class="major"><strong>항공컴퓨터공학과 22</strong></div>
-                    </div>
-                </div>
-            </div>
-            
+{% block title %} 
+ABOUT 
+{% endblock title %} 
 
-            <div class="profil-box">
-                <div class="end">
-                    Product Design
-                </div>
-                <div class="p-b">
-                    <div class="profil">
-                        <img class="박대영" src="{% static "img/PDY.png" %}" width="140px", height="140px" alt="박대영">
-                        <div class="P_name"><strong>박대영</strong></div>
-                        <div class="major"><strong>항공소프트웨어공학과 18</strong></div>
-                    </div>
-                    <div class="profil">
-                        <img class="이다빈" src="{% static "img/LDB.png" %}" width="130px", height="130px" alt="이다빈">
-                        <div class="name"><strong>이다빈</strong></div>
-                        <div class="major"><strong>항공소프트웨어공학과 20</strong></div>
-                    </div>
-                </div>
-                <div class="extra-imf">
-                    본 페이지의 디자인은 @likelion_dongguk에서 제작한<br>동국대학교 2022 대동제 사이트를 참고하였습니다.
-                </div>
-            </div>
+{% block detail%}
+<div class="profil-box flex-justify-center">
+    <div class="end Gmarket-Medium-White">Front - end</div>
+    <div class="p-b">
+        <div class="profil flex-justify-center">
+            <img src="{% static "img/LHB.png" %}" width="130px", height="130px" alt="이하빈">
+            <div class="name"><strong>이하빈</strong></div>
+            <div class="major yellow"><strong>항공소프트웨어공학과 22</strong></div>
+        </div>
+        <div class="profil flex-justify-center">
+            <img src="{% static "img/HSI.png" %}" width="140px", height="140px" alt="홍성인">
+            <div class="H_name"><strong>홍성인</strong></div>
+            <div class="major yellow"><strong>항공컴퓨터공학과 20</strong></div>
         </div>
     </div>
-</body>
-</html>
+</div>
+
+<div class="profil-box flex-justify-center">
+    <div class="end Gmarket-Medium-White">Back - end</div>
+    <div class="p-b">
+        <div class="profil flex-justify-center">
+            <img src="{% static "img/LKH.png" %}" width="130px", height="130px" alt="이가현">
+            <div class="name"><strong>이가현</strong></div>
+            <div class="major yellow"><strong>항공소프트웨어공학과 19</strong></div>
+        </div>
+        <div class="profil flex-justify-center">
+            <img src="{% static "img/LSM.png" %}" width="130px", height="130px" alt="이승민">
+            <div class="name"><strong>이승민</strong></div>
+            <div class="major yellow"><strong>항공컴퓨터공학과 22</strong></div>
+        </div>
+    </div>
+</div>
+
+<div class="profil-box flex-justify-center">
+    <div class="end Gmarket-Medium-White">Product Design</div>
+    <div class="p-b">
+        <div class="profil flex-justify-center">
+            <img class="박대영" src="{% static "img/PDY.png" %}" width="140px", height="140px" alt="박대영">
+            <div class="P_name"><strong>박대영</strong></div>
+            <div class="major yellow"><strong>항공소프트웨어공학과 18</strong></div>
+        </div>
+        <div class="profil flex-justify-center">
+            <img class="김다빈" src="{% static "img/LDB.png" %}" width="130px", height="130px" alt="이다빈">
+            <div class="name"><strong>김다빈</strong></div>
+            <div class="major yellow"><strong>항공소프트웨어공학과 20</strong></div>
+        </div>
+    </div>
+</div>
+
+<div class="footerWrap flex-justify-center">
+    <div class="footer horizon-middle Gmarket-Medium-White">
+        한서대학교 멋쟁이 사자처럼 <br />
+        LIKE LION HSU
+    </div>
+</div>
+{% endblock detail %}

@@ -1,6 +1,5 @@
 from django.contrib import admin
-from .models import intruduce,menu
+from .models import intruduce
 # Register your models here.
 
 admin.site.register(intruduce)
-admin.site.register(menu)

@@ -1,6 +1,6 @@
 from multiprocessing import context
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import intruduce,menu
+from .models import intruduce
 from django.views.generic import ListView, DetailView
 
 import json
@@ -26,22 +26,16 @@ class intruduceDetail(DetailView):
     template_name = 'Booth_info2.html'
     def get_context_data(self, **kwargs): #p326
         context = super(intruduceDetail, self).get_context_data()
-        context['comments'] = menu.objects.filter(intru = self.get_object())
         return context
     
 def intruduce_lend1(request):
     intruduce_list = intruduce.objects.order_by('pk')
-    return render(request, 'Booth_Info.html',
-                {'intruduce_list': intruduce_list, 
-                }
-                )
+    return render(request, 'Booth_Info.html', {'intruduce_list': intruduce_list, })
     
     
 def like_counter(request,pk):
     product = intruduce.objects.get(pk = pk)
-    print(product.likecount)
     a = str(pk)
-    # menu = menu.objects.filter(intruduce_list = self.get_object())
     try:
         #choice모델을 불러와서 1을 증가시킨다 
         # choice = Choice.objects.get(poll_id = poll.id, candidate_id = selection)
@@ -56,9 +50,7 @@ def like_counter(request,pk):
     
 def like_counter2(request,pk):
     product = intruduce.objects.get(pk = pk)
-    print(product.likecount)
     a = str(pk)
-    # menu = menu.objects.filter(intruduce_list = self.get_object())
     try:
         #choice모델을 불러와서 1을 증가시킨다 
         # choice = Choice.objects.get(poll_id = poll.id, candidate_id = selection)
@@ -76,8 +68,6 @@ def like_counter2(request,pk):
 def video_like(request):
     pk = request.POST.get('pk', None)
     product = get_object_or_404(intruduce, pk=pk)
-    print(pk)
-    print(product)
     product.likecount += 1
     product.save()
     context = {'likes_count':product.likecount}
