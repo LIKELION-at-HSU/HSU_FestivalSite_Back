@@ -48,7 +48,7 @@
             {% for intruduce in intruduce_list %}
             <div class="card swiper-slide Gmarket-Medium-White" style="width: 250px">
                 {% if intruduce.imagecheack == none %}
-                <div class="card__image"><img src="{% static "/img/귀엽당.png" %}" alt="card image"></div>
+                <div class="card__image flex-justify-center"><img src="{% static "/img/hanseo.png" %}" alt="card image"></div>
                 {% else %}
                 <div class="card__image">
                     <img src="{{ intruduce.image.url }}" alt="card image" />

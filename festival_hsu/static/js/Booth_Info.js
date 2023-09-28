@@ -29,9 +29,7 @@ $(document).ready(function () {
 //하트 누르기
 $(document).ready(function () {
     $(document).on("click", "#Like", function () {
-        console.log("#"+ $(this).val())
         var pk = $(this).attr('name')
-        console.log(pk)
         $.ajax({ // ajax로 서버와 통신
             type: "POST", // 데이터를 전송하는 방법
             url: "/intru/like/", // 통신할 url을 지정

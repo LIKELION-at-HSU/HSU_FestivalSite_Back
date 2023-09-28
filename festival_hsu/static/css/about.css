@@ -11,7 +11,6 @@
     border-radius: 10px;
     flex-direction: column;
     align-items: center;
-    /*배경색깔*/
     background: linear-gradient(0deg, rgba(255,255,255,0.5) 63%, rgba(255,255,255,0.5) 61%, rgba(255,255,255,0.5) 93%);
 }
 .p-b {
@@ -34,9 +33,15 @@
     padding-bottom: 50px;
 }
 .name {
+    display: flex;
+    flex-direction: row;
     margin: 10px;
     font-size: 17px;
     border: 10px;
+}
+.lion {
+    font-size: 17px;
+    margin: 0;
 }
 .major {
     margin: 10px;
@@ -50,10 +55,14 @@
     padding-right: 8px;
 }
 .P_name {
+    display: flex;
+    flex-direction: row;
     margin-bottom: 10px;
     padding-bottom: 2.3px;
 }
 .H_name {
+    display: flex;
+    flex-direction: row;
     padding-bottom: 3px;
     margin-bottom: 7px;
 }
