@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 secret_file = os.path.join(BASE_DIR, "secrets.json")
 
 with open(secret_file) as f:
-    secrets = json.load(f.read())
+    secrets = json.loads(f.read())
     
 def get_secret(setting, secrets=secrets):
     try:
@@ -67,10 +67,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'festival_hsu.urls'
-STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -136,6 +133,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
