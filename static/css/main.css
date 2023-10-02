@@ -375,7 +375,7 @@
         /* 방명록 */
         .comment-wrap {
             /* top: 385%; */
-            top: 410%
+            top: 410%;
             flex-direction: column;
             font-size: 10vw;
             font-weight: 900;
