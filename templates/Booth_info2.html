@@ -3,8 +3,6 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static "css/booth.css" %}" >
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
-    <script src="{% static "js/Booth_Info.js" %}"></script>
     <script>
         $.ajaxSetup({
           headers: { "X-CSRFToken": '{{csrf_token}}' }
