@@ -20,8 +20,8 @@
 html,
 body {
     margin: 0;
-    height: 100vh;
-    width: calc(var(--vh) * 100);
+    width: 100vh;
+    height: calc(var(--vh) * 100);
     overflow-x: hidden;
     position: relative;
     display: flex;
