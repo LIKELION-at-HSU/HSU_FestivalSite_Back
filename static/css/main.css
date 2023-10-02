@@ -18,8 +18,8 @@
         .title {
             font-size: 12vh;
             line-height: 27vw;
-            top: 30%;
-    
+            /* top: 30%; */
+            top: 27%;
         }
     
         .title {
@@ -45,6 +45,7 @@
         .date {
             position: absolute;
             top: 60%;
+            /* top: 65%; */
             right: 26%;
             display: flex;
         }
@@ -52,6 +53,7 @@
         .desc {
             position: absolute;
             top: 64%;
+            /* top: 69%; */
             right: 26%;
             width: 100vw;
         }
@@ -60,7 +62,8 @@
             padding-top: 80px;
             position: absolute;
             left: 50%;
-            top: 70%;
+            /* top: 70%; */
+            top: 77%;
         }
         
         /* 메인 타이틀 밑 움직이는 화살표 */
@@ -371,7 +374,8 @@
     
         /* 방명록 */
         .comment-wrap {
-            top: 385%;
+            /* top: 385%; */
+            top: 410%
             flex-direction: column;
             font-size: 10vw;
             font-weight: 900;
@@ -380,7 +384,8 @@
         }
     
         .comment-title {
-            top: 380%;
+            /* top: 350%; */
+            top: 405%;
             font-size: 20px;
         }
     
@@ -455,7 +460,8 @@
     
         /* 만든이들 */
         .made-wrap {
-            top: 450%;
+            /* top: 450%; */
+            top: 470%;
             font-size: 20px;
         }
     
