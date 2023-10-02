@@ -14,11 +14,12 @@
 
 .commentBox {
   flex-direction: column;
-  width: 316px;
+  width: 100%;
   min-height: 35px;
   padding: 6px 0 8px 7px;
   border-bottom: 0.4px solid rgba(0, 0, 0, 0.30);
   margin-bottom: 5px;
+  overflow-wrap: anywhere;
 }
 
 .info{

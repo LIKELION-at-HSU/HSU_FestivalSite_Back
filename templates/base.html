@@ -28,12 +28,8 @@
         
         {% block script %} {% endblock script %}
         <script>
-
             let vh = window.innerHeight * 0.01;
-            console.log("vh : ");
-            console.log(vh);
             document.documentElement.style.setProperty('--vh', `${vh}px`);
-        
         </script>
         <script type="text/javascript" src="{% static "js/script.js" %}"></script>
     </body>
