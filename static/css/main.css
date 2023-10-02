@@ -239,11 +239,13 @@
     
         .timetable-wrap {
             font-size: 20px;
-            top: 268%;
+            /* top: 268%; */
+            top: 298%;
         }
     
         .bottombox {
-            top: 270%;
+            /* top: 270%; */
+            top: 302%;
         }
     
         .midbox {
@@ -369,7 +371,7 @@
     
         /* 방명록 */
         .comment-wrap {
-            top: 355%;
+            top: 385%;
             flex-direction: column;
             font-size: 10vw;
             font-weight: 900;
@@ -378,7 +380,7 @@
         }
     
         .comment-title {
-            top: 350%;
+            top: 380%;
             font-size: 20px;
         }
     
@@ -453,7 +455,7 @@
     
         /* 만든이들 */
         .made-wrap {
-            top: 420%;
+            top: 450%;
             font-size: 20px;
         }
     
