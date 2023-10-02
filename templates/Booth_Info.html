@@ -3,6 +3,11 @@
 
 {% block css %}
     <link rel="stylesheet" href="{% static "css/booth.css" %}" >
+    <script>
+        $.ajaxSetup({
+          headers: { "X-CSRFToken": '{{csrf_token}}' }
+        });
+    </script>
 {% endblock css%}
 
 {% block title %}
