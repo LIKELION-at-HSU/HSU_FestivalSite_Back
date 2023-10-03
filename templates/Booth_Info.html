@@ -18,8 +18,9 @@ BOOTH INFO
         <div class="map flex-justify-center">
             <!-- 지도사진들어가는곳> -->
             <img  src="{% static "img/boothLoc.jpeg" %}" class="hanseo_map" alt="hanseo_map" id = "dl">
+            <div class="Gmarket-Medium-White mapNav yellow"> 지도 위 부스를 눌러보세요!</div>
             {% for introduce in intruduce_list%}
-            <button id="myid" value = "booth{{introduce.id}}" class = "move" style = "margin-top:{{introduce.x}}vw ;margin-left:{{introduce.y}}vw ;"><img src = "{% static "img/pngwing.com (1).png" %}" style = "width: 2vw; height : 2vw; "></button>
+            <button id="myid" value = "booth{{introduce.id}}" class = "move" style = "margin-top:{{introduce.x}}vw ;margin-left:{{introduce.y}}vw ;"></button>
             {% endfor %}
         </div>
         
@@ -56,9 +57,10 @@ BOOTH INFO
                         </div>
                     </div>
                 </div>
-            {% endfor %}              
-
-
+            {% endfor %}  
+                <div class="emptyBox"></div>
+                <div class="emptyBox"></div>
+                <div class="emptyBox"></div>            
             </div>
             
         </div>

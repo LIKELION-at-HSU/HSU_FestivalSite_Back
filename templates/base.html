@@ -27,10 +27,10 @@
         {% block content%} {% endblock content %} 
         
         {% block script %} {% endblock script %}
-        <script>
+        {% comment %} <script>
             let vh = window.innerHeight * 0.01;
             document.documentElement.style.setProperty('--vh', `${vh}px`);
-        </script>
+        </script> {% endcomment %}
         <script type="text/javascript" src="{% static "js/script.js" %}"></script>
     </body>
 </html>

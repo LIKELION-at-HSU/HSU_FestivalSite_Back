@@ -1,8 +1,16 @@
+.comments-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 65dvh;
+  align-items: center;
+}
+
 .commentsContainer {
   /* width: 336px; */
   width: 86vw;
   /* height: 510px; */
-  height: 62vh;
+  height: 62dvh;
   overflow-y: scroll;
   border-radius: 10px;
 }
@@ -49,12 +57,12 @@
 }
 
 .inputContainer {
-  position: fixed;
+  /* position: fixed; */
   /* top: 775px; */
-  bottom: 20px;
+  /* bottom: 20px; */
   width: 86vw;
-  left: 50%;
-  transform: translateX( -50% );
+  /* left: 50%; */
+  /* transform: translateX( -50% ); */
 }
 
 .nameInput {

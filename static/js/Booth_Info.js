@@ -21,6 +21,8 @@ $(document).ready(function () {
     $(document).on("click", "#myid", function () {
         const offset = $("#"+$(this).val()).offset();
         const offset2 = $("#target").offset();
+        console.log(offset);
+        console.log(offset2);
         var top = offset.top - offset2.top;
         $('#scroll').animate({scrollTop: top},500);
     });

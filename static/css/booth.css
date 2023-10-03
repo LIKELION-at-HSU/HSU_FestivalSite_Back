@@ -17,6 +17,13 @@ hr{
     width: 90vw;
     margin-top: 6vw;
     align-items: center;
+    flex-direction: column;
+}
+
+.mapNav {
+    font-size: 10px;
+    width: 70vw;
+    text-align: right;
 }
 
 .hanseo_map{
@@ -31,8 +38,8 @@ hr{
     position: absolute;
     background-color: transparent;
     border: none;
-    width: 2vw;
-    height: 2vw;
+    width: 3.5vw;
+    height: 3vh;
 }
 
 .boothContainer{
@@ -42,6 +49,12 @@ hr{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.emptyBox {
+    height: 97px;
+    margin-bottom: 15px ;
+    background: none;
 }
 
 .booth_outbox{
