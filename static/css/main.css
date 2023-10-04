@@ -153,7 +153,7 @@
         }
     
         .swiper-wrapper {
-            height: 35em;
+            height: 25em;
         }
     
         .card {
@@ -165,6 +165,7 @@
             align-items: center;
             flex-direction: column;
             margin: 0 2em;
+            justify-content: center;
         }
     
         .swiper-slide:not(.swiper-slide-active) {
@@ -187,8 +188,6 @@
             display: flex;
             align-items: center;
             flex-direction: column;
-            margin-top: 20vw;
-            
         }
     
         .card-intro {
@@ -204,12 +203,12 @@
             position: relative;
             top: -4em;
             color: #DA6953;
+            margin: 0.5em;
         }
     
         .booth_name {
             font-size: 1.3rem;
             font-weight: 500;
-            position: relative;
             top: -2em;
             font-weight: 700;
             color: #ffff;
@@ -220,8 +219,8 @@
             font-size: 1rem;
             color: #dadada;
             font-weight: 100;
-            position: relative;
             top: -1em;
+            margin: 0.8em;
         }
     
         .card__btn {
